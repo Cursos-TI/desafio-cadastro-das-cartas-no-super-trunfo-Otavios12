@@ -2,16 +2,23 @@
 
 int main(){
 
-    int carta1, carta2;
-    char estado[40];
-    char codigo[40];
-    char nome_da_cidade[40];
-    int populacao;
-    float area²;
-    float PIB;
-    int Pontos_Turisticos;
-    float DensidadePopulacional;
-    float PIBpercapita;
+    char estado[40], estado2[40];
+    char codigo[40], codigo2[40];
+    char nome_da_cidade[40], nome_da_cidade2[40];
+    unsigned long int populacao, populacao2;
+    float area, area2;
+    float PIB, PIB2;
+    int Pontos_Turisticos, Pontos_Turisticos2;
+    float DensidadePopulacional, DensidadePopulacional2;
+    float PIBpercapita, PIBpercapita2;
+    float superpoder, superpoder2;
+    int resultadoPopulacao;
+    int resultadoArea;
+    int resultadoPIB;
+    int resultadoPontosTuristicos;
+    int resultadoDensidadePopulacional;
+    int resultadoPIBperCapita;
+    int resultadoSuperPoder;
 
 
     printf("DESAFIO SUPER TRUNFO \n");
@@ -36,94 +43,125 @@ int main(){
     scanf("%d", &populacao);
 
     printf("Digite a area da cidade: ");
-    scanf("%f", &area²);
+    scanf("%f", &area);
 
     printf("Digite o PIB da cidade: ");
     scanf("%f", &PIB);
 
     printf("Digite a quantidade de pontos turisticos: ");
-    scanf("%d", &Pontos_Turisticos );
+    scanf("%d", &Pontos_Turisticos);
 
-    DensidadePopulacional = populacao / area²;
-    PIBpercapita = PIB / populacao;
+   
+
+    //calculos carta 1 
+
+    DensidadePopulacional = populacao / area;
 
 
-    //exibição de dados carta 1 
+    PIBpercapita = (PIB*1000000000) / populacao;
 
-    printf("CARTA 1 \n");
+    superpoder = (float) populacao + area + PIB + (float) Pontos_Turisticos + PIBpercapita + (1 / DensidadePopulacional);
 
-    printf("Estado: %s \n", estado);
 
-    printf("Codigo da carta: %s \n", codigo);
-
-    printf("Nome da cidade: %s \n", nome_da_cidade);
-
-    printf("Populacao: %d \n", populacao);
-
-    printf("area²: %.2f \n", area²);
-
-    printf("PIB: %.2f\n", PIB);
-
-    printf("quantidade de pontos turisticos: %d \n", Pontos_Turisticos);
-
-    printf("Densidade populacional: %.2f \n", DensidadePopulacional);
-
-    printf("PIB per capita: %.2f \n", PIBpercapita);
 
 
 
     //entrada de dados carta 2 
 
     printf("CARTA 2 \n");
-
-
+    
     printf("Digite o estado: ");
-    scanf("%s", &estado);
+    scanf("%s", &estado2);
 
     printf("Digite o codigo da carta: ");
-    scanf("%s", &codigo);
+    scanf("%s", &codigo2);
 
     printf("Digite o nome da cidade: ");
-    scanf("%s", &nome_da_cidade);
+    scanf("%s", &nome_da_cidade2);
 
     printf("Digite a populacao da cidade: ");
-    scanf("%d", &populacao);
+    scanf("%d", &populacao2);
 
     printf("Digite a area da cidade: ");
-    scanf("%f", &area²);
+    scanf("%f", &area2);
 
     printf("Digite o PIB da cidade: ");
-    scanf("%f", &PIB);
+    scanf("%f", &PIB2);
 
     printf("Digite a quantidade de pontos turisticos: ");
-    scanf("%d", &Pontos_Turisticos );
+    scanf("%d", &Pontos_Turisticos2);
 
-    DensidadePopulacional = populacao / area²;
-    PIBpercapita = PIB / populacao;
+
+
+    //calculos carta 2 
     
+    DensidadePopulacional2 = populacao2 / area2;
+
+
+    PIBpercapita2 = (PIB2*1000000000) / populacao2;
+
+    superpoder2 = (float) populacao2 + area2 + PIB2 + (float) Pontos_Turisticos2 + PIBpercapita2 + (1 / DensidadePopulacional2);
     
-    //exibicao de dados carta 2 
-      
+
+    //exibição dos resultados da carta 1
+
+    printf("CARTA 1 \n");
+    
+    printf("Estado: %s\n", estado);
+    printf("Codigo da carta: %s\n", codigo);
+    printf("Nome da cidade: %s\n", nome_da_cidade);
+    printf("Populacao: %lu\n", populacao);
+    printf("area: %.2f\n", area);
+    printf("PIB: %.2f\n", PIB);
+    printf("Pontos turisticos: %d\n", Pontos_Turisticos);
+    printf("Densidade Populacional:%.2f\n", DensidadePopulacional);
+    printf("PIB per capita:%.2f\n", PIBpercapita);
+    printf("Super Poder:%.2f\n", superpoder);
+
+
+    // exibiçao de dados carta 2 
+
 
     printf("CARTA 2\n");
 
-    printf("Estado: %s \n", estado);
 
-    printf("Codigo da carta: %s \n", codigo);
+    printf("Estado: %s\n", estado2);
+    printf("Codigo da carta: %s\n", codigo2);
+    printf("Nome da cidade: %s\n", nome_da_cidade2);
+    printf("Populacao: %lu\n", populacao2);
+    printf("area: %.2f\n", area2);
+    printf("PIB: %.2f\n", PIB2);
+    printf("Pontos turisticos: %d\n", Pontos_Turisticos2);
+    printf("Densidade Populacional:%f\n", DensidadePopulacional2);
+    printf("PIB per capita:%.2f\n", PIBpercapita2);
+    printf("Super Poder:%.2f\n", superpoder2);
 
-    printf("Nome da cidade: %s \n", nome_da_cidade);
 
-    printf("Populacao: %d \n", populacao);
+    // comparaçoes dos atributos 
 
-    printf("area²: %.2f \n", area²);
+  
+    resultadoPopulacao = populacao > populacao2;
+    resultadoArea = area > area2;
+    resultadoPIB =  PIB > PIB2;
+    resultadoPontosTuristicos = Pontos_Turisticos > Pontos_Turisticos2;
+    resultadoDensidadePopulacional = DensidadePopulacional < DensidadePopulacional2;
+    resultadoPIBperCapita = PIBpercapita > PIBpercapita2;
+    resultadoSuperPoder = superpoder > superpoder2;
 
-    printf("PIB: %.2f\n", PIB);
+    //exibição das comparaçoes
 
-    printf("quantidade de pontos turisticos: %d \n", Pontos_Turisticos);
+    printf("Populacao: %d\n", resultadoPopulacao);
+    printf("Area: %d\n", resultadoArea);
+    printf("PIB: %d\n", resultadoPIB);
+    printf("Pontos Turisticos: %d\n", resultadoPontosTuristicos);
+    printf("Densidade Populacional: %d\n", resultadoDensidadePopulacional);
+    printf("PIB per capita: %d\n", resultadoPIBperCapita);
+    printf("Super Poder: %d\n", resultadoSuperPoder);
+   
 
-    printf("Densidade populacional: %.2f \n", DensidadePopulacional);
 
-    printf("PIB per capita: %.2f \n", PIBpercapita);
+
+
 
 
     return 0;
